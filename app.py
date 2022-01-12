@@ -10,7 +10,7 @@ cont_codificado = os.environ["GOOGLE_SHEET_CREDENTIAL"]
 conteudo = base64.b64decode(cont_codificado)
 credentials = json.loads(conteudo)
 
-ervice_account = gspread.service_account_from_dict(credentials)
+service_account = gspread.service_account_from_dict(credentials)
 spreadsheet = service_account.open_by_key(spreadsheet_id)
 worksheet = spreadsheet.worksheet("matriculas_zn_2020")
 
