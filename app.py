@@ -21,4 +21,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def inicio():
-  return dados
+  return "<p> Dados de matrícula das escolas da zona norte de SP</p>"
