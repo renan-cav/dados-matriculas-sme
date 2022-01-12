@@ -3,7 +3,7 @@ import json
 import os
 
 import gspread
-from flask import Flask, render_template
+from flask import Flask
 import pandas as pd
 
 spreadsheet_id = os.environ["GOOGLE_SHEET_ID"]
