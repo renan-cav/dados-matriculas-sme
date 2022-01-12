@@ -13,7 +13,7 @@ credentials = json.loads(conteudo)
 
 service_account = gspread.service_account_from_dict(credentials)
 spreadsheet = service_account.open_by_key(spreadsheet_id)
-worksheet = spreadsheet.worksheet("matriculas_zn_2020")
+worksheet = spreadsheet.worksheet("df_turmas_2020")
 
 dados = pd.DataFrame(worksheet.get_all_records())
 
