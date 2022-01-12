@@ -1,4 +1,18 @@
-from flask import Flask
+import base64
+import json
+import os
+
+import gspread
+from flask import Flask, render_template
+
+spreadsheet_id = os.environ["GOOGLE_SHEET_ID"]
+cont_codificado = os.environ["GOOGLE_SHEET_CREDENTIALs"]
+conteudo = base64.b64decode(cont_codificado)
+credentials = json.loads(conteudo)
+
+ervice_account = gspread.service_account_from_dict(credentials)
+spreadsheet = service_account.open_by_key(spreadsheet_id)
+worksheet = spreadsheet.worksheet("matriculas_zn_2020")
 
 app = Flask(__name__)
 @app.route("/")
