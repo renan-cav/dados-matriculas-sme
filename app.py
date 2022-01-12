@@ -6,7 +6,7 @@ import gspread
 from flask import Flask, render_template
 
 spreadsheet_id = os.environ["GOOGLE_SHEET_ID"]
-cont_codificado = os.environ["GOOGLE_SHEET_CREDENTIALs"]
+cont_codificado = os.environ["GOOGLE_SHEET_CREDENTIAL"]
 conteudo = base64.b64decode(cont_codificado)
 credentials = json.loads(conteudo)
 
