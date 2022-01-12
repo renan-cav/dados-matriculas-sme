@@ -4,6 +4,7 @@ import os
 
 import gspread
 from flask import Flask, render_template
+import pandas as pd
 
 spreadsheet_id = os.environ["GOOGLE_SHEET_ID"]
 cont_codificado = os.environ["GOOGLE_SHEET_CREDENTIAL"]
@@ -17,7 +18,7 @@ worksheet = spreadsheet.worksheet("matriculas_zn_2020")
 dados = pd.DataFrame(worksheet.get_all_records())
 
 app = Flask(__name__)
+
 @app.route("/")
 def inicio():
-  return "<p>Dados Matrículas SME 2020</p>"
-          dados
+  return dados
