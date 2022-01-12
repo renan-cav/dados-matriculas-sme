@@ -1,3 +1,4 @@
 flask
 gspread
 gunicorn
+pandas
