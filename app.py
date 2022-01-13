@@ -21,8 +21,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def inicio():
-  return dados.to_html()
+  return "<p> Página inicial</p>"
 
 @app.route("/sobre")
 def sobre():
   return "<p> Desenvolvido por Renan Cavalcante Eugenio como projeto para o curso de pós-graduação de jornalismo de dados, automação e data storytelling do Instituto Insper</p>"
+
+@app.route("/dados")
+def inicio():
+  return dados.to_html()
