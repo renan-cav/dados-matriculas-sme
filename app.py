@@ -3,7 +3,7 @@ import json
 import os
 
 import gspread
-from flask import Flask
+from flask import Flask, render_template
 import pandas as pd
 
 spreadsheet_id = os.environ["GOOGLE_SHEET_ID"]
@@ -16,9 +16,10 @@ spreadsheet = service_account.open_by_key(spreadsheet_id)
 worksheet = spreadsheet.worksheet("df_turmas_2020")
 
 dados = pd.DataFrame(worksheet.get_all_records())
+dados_html = dados.to_html()
 
 app = Flask(__name__)
 
 @app.route("/")
 def inicio():
-  return dados.to_html()
+  return render_template("home.html")
