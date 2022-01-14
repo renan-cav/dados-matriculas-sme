@@ -30,4 +30,4 @@ def sobre():
 
 @app.route("/dados")
 def dados():
-  return render_template("dados.html")
+  return dados_html
