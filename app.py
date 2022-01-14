@@ -23,3 +23,7 @@ app = Flask(__name__)
 @app.route("/")
 def inicio():
   return render_template("home.html")
+
+@app.route("/sobre")
+def sobre():
+  return render_template("sobre.html")
