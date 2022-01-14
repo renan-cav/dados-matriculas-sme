@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Dados{% endblock %}
+
+{% block cabecalho %}Dados ZN{% endblock %}
+
+{% block conteudo %}
+<p><a href="/">Página Inicial</a></p>
+<p><a href="/sobre">Sobre o projeto</a></p>
+<p> {{dados_html}}
+{% endblock %}
